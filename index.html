@@ -43,8 +43,6 @@
 
         function openNewTab(url) {
             var newTab = window.open(url, '_blank');
-            var newWindow = window.open(url, '_blank', 'noopener');
-            newWindow.document.close();
             newTab.focus();
         }
 
