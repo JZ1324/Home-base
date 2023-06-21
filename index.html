@@ -36,26 +36,15 @@
             font-size: 18px;
         }
     </style>
-    <script src="logoutSites.js"></script>
     <script>
         var noiceUrl = "https://jz1324.github.io/Who-does-JZ-Like/";
-        var rickrollUrl = "https://shattereddisk.github.io/rickroll/rickroll.mp4";
 
-        function openNewTab(url) {
-            var newTab = window.open(url, '_blank');
-            newTab.focus();
-        }
-
-        function downloadFile(url) {
-            var link = document.createElement('a');
-            link.href = url;
-            link.download = url.split('/').pop();
-            link.click();
+        function openSameTab(url) {
+            window.location.href = url;
         }
 
         function unblockTabs() {
-            openNewTab(noiceUrl);
-            downloadFile(rickrollUrl);
+            openSameTab(noiceUrl);
         }
     </script>
 </head>
