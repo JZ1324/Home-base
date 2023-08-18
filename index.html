@@ -179,29 +179,27 @@ h1 > .magic > .magic-text {
   </style>
   
  <script>
- document.addEventListener("DOMContentLoaded", () => {
-  const stars = document.querySelectorAll(".magic-star");
-  const interval = 1000; // Define the interval in milliseconds
+let index = 0,
+    interval = 1000;
 
-  const animate = (star) => {
-    star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
-    star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
-  };
+const rand = (min, max) => 
+  Math.floor(Math.random() * (max - min + 1)) + min;
 
-  const startAnimation = (star) => {
+const animate = star => {
+  star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+  star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+
+  star.style.animation = "none";
+  star.offsetHeight;
+  star.style.animation = "";
+}
+
+for(const star of document.getElementsByClassName("magic-star")) {
+  setTimeout(() => {
     animate(star);
-    setInterval(() => {
-      animate(star);
-    }, interval);
-  };
-
-  for (const star of stars) {
-    startAnimation(star);
-  }
-});
-
-function rand(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+    
+    setInterval(() => animate(star), 1000);
+  }, index++ * (interval / 3))
 }
 
 
