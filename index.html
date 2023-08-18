@@ -195,8 +195,9 @@ h1 > .magic > .magic-text {
   </style>
   
  <script>
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
   const stars = document.querySelectorAll(".magic-star");
+  const interval = 1000; // Define the interval in milliseconds
 
   const animate = (star) => {
     star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
@@ -218,6 +219,7 @@ h1 > .magic > .magic-text {
 function rand(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 
  </script>
 </head>
