@@ -263,13 +263,19 @@ const animate = star => {
   star.style.animation = "";
 }
 
-for(const star of document.getElementsByClassName("magic-star")) {
+const stars = document.getElementsByClassName("magic-star");
+
+for (const star of stars) {
   setTimeout(() => {
     animate(star);
-    
-    setInterval(() => animate(star), 1000);
-  }, index++ * (interval / 3))
+
+    const starInterval = setInterval(() => animate(star), 1000);
+
+    // Clear the interval after a certain number of iterations
+    setTimeout(() => clearInterval(starInterval), 10000); // Clear after 10 seconds
+  }, index++ * (interval / 3));
 }
+
 
 
  </script>
