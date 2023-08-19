@@ -7,7 +7,13 @@
   <title>Home</title>
   <link rel="icon" type="image/png" href="https://i.imgur.com/rJtWReo.png">
    <style>
-      /* Gradient button CSS */
+   
+    .back-button-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    
         html,
         body {
             margin: 0;
@@ -285,7 +291,7 @@ setInterval(animateStars, 1000);
  
 </head>
 <body>
-   <div style="display: flex; justify-content: left; align-items: left">
+   <div class="back-button-container">
      <button class="glow-on-hover" type="button" onclick="window.location.href='https://jz1324.github.io/8.6-Timetable/index.html';"><b style="font-size: 22px;
 ">Back</b></button>
    </div>
