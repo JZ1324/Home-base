@@ -268,13 +268,12 @@ const stars = document.getElementsByClassName("magic-star");
 for (const star of stars) {
   setTimeout(() => {
     animate(star);
-
-    const starInterval = setInterval(() => animate(star), 1000);
-
-    // Clear the interval after a certain number of iterations
-    setTimeout(() => clearInterval(starInterval), 10000); // Clear after 10 seconds
+    
+    // Repeat the animation every 3 seconds
+    setInterval(() => animate(star), 3000); // Repeat every 3 seconds
   }, index++ * (interval / 3));
 }
+
 
 
 
