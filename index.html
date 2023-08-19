@@ -265,14 +265,17 @@ const animate = star => {
 
 const stars = document.getElementsByClassName("magic-star");
 
-for (const star of stars) {
-  setTimeout(() => {
+function animateStars() {
+  for (const star of stars) {
     animate(star);
-    
-    // Repeat the animation every 3 seconds
-    setInterval(() => animate(star), 3000); // Repeat every 3 seconds
-  }, index++ * (interval / 3));
+  }
 }
+
+// Call animateStars initially
+animateStars();
+
+// Repeat the animation every 3 seconds
+setInterval(animateStars, 3000);
 
 
 
