@@ -262,16 +262,20 @@ const animate = star => {
   star.offsetHeight;
   star.style.animation = "";
 }
-for(const star of document.getElementsByClassName("magic-star")) {
-  setTimeout(() => {
-    animate(star);
-    
-    setInterval(() => animate(star), 1000);
-  }, index++ * (interval / 3))
+const stars = document.getElementsByClassName("magic-star");
+
+function animateStarRandomly(star) {
+  animate(star);
+
+  // Schedule the next animation randomly between 0.1 to 1 second
+  const nextInterval = Math.random() * 900 + 100; // Between 100 to 1000 ms
+  setTimeout(() => animateStarRandomly(star), nextInterval);
 }
 
-setInterval(animateStarRandomly, 3000);
-
+// Call animateStarRandomly for each star
+for (const star of stars) {
+  animateStarRandomly(star);
+}
 
 
 
